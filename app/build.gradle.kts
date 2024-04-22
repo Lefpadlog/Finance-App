@@ -12,8 +12,8 @@ android {
         applicationId = "com.lefpadlog.financeapp"
         minSdk = 34
         targetSdk = 34
-        versionCode = 1
-        versionName = "1.0 Final"
+        versionCode = 2
+        versionName = "1.1 Final"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         vectorDrawables {
