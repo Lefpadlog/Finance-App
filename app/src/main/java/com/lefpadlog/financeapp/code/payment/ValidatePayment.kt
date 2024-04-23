@@ -1,4 +1,4 @@
-package com.lefpadlog.financeapp.code.validate
+package com.lefpadlog.financeapp.code.payment
 
 import com.lefpadlog.financeapp.code.data.AppDatabase
 import com.lefpadlog.financeapp.code.data.Constants

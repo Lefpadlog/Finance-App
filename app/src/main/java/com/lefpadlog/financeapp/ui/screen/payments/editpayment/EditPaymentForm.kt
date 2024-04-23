@@ -14,7 +14,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
 import com.lefpadlog.financeapp.code.data.AppData.selectedPayment
-import com.lefpadlog.financeapp.code.validate.ValidatePayment
+import com.lefpadlog.financeapp.code.payment.ValidatePayment
 import com.lefpadlog.financeapp.ui.screen.payments.AmountField
 import com.lefpadlog.financeapp.ui.screen.payments.DateField
 import com.lefpadlog.financeapp.ui.screen.payments.DeleteAllButton

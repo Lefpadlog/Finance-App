@@ -12,7 +12,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
 import com.lefpadlog.financeapp.code.data.AppData.selectedPaymentMethod
-import com.lefpadlog.financeapp.code.validate.ValidatePaymentMethod
+import com.lefpadlog.financeapp.code.paymentmethod.ValidatePaymentMethod
 
 import com.lefpadlog.financeapp.ui.screen.paymentmethods.AmountField
 import com.lefpadlog.financeapp.ui.screen.paymentmethods.DescriptionField
@@ -20,7 +20,6 @@ import com.lefpadlog.financeapp.ui.screen.paymentmethods.InputField
 import com.lefpadlog.financeapp.ui.screen.paymentmethods.TypeField
 import com.lefpadlog.financeapp.ui.screen.paymentmethods.DeleteButton
 import com.lefpadlog.financeapp.ui.screen.paymentmethods.SaveButton
-import java.time.format.DateTimeFormatter
 
 @Composable
 fun EditPaymentMethodForm(navController: NavController) {

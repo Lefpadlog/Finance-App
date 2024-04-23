@@ -3,7 +3,6 @@ package com.lefpadlog.financeapp.code.paymentmethod
 import androidx.compose.runtime.MutableState
 import com.lefpadlog.financeapp.code.data.AppData.selectedPaymentMethod
 import com.lefpadlog.financeapp.code.data.paymentmethod.PaymentMethod
-import com.lefpadlog.financeapp.code.validate.ValidatePaymentMethod
 import java.net.URL
 
 fun appendToSelectedPaymentMethod (

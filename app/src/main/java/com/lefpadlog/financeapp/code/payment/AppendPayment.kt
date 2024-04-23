@@ -4,7 +4,6 @@ import androidx.compose.runtime.MutableState
 import com.lefpadlog.financeapp.code.data.AppData.selectedPayment
 import com.lefpadlog.financeapp.code.data.payment.Payment
 import com.lefpadlog.financeapp.code.date.cleanDate
-import com.lefpadlog.financeapp.code.validate.ValidatePayment
 
 fun appendToSelectedPayment(
     title: String, titleValid: MutableState<Boolean>,

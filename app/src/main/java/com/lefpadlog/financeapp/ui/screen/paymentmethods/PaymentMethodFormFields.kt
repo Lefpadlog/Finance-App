@@ -9,11 +9,8 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.AttachMoney
-import androidx.compose.material.icons.filled.CreditCard
-import androidx.compose.material.icons.filled.DateRange
 import androidx.compose.material.icons.filled.Description
 import androidx.compose.material.icons.filled.Edit
-import androidx.compose.material.icons.filled.Password
 import androidx.compose.material3.Button
 import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.MaterialTheme
@@ -32,7 +29,6 @@ import com.lefpadlog.financeapp.code.data.AppDatabase.paymentMethods
 import com.lefpadlog.financeapp.code.data.AppDatabase.payments
 import com.lefpadlog.financeapp.code.data.Constants.PAYMENT_METHOD_VARIANTS
 import com.lefpadlog.financeapp.code.paymentmethod.appendToSelectedPaymentMethod
-import com.lefpadlog.financeapp.code.validate.ValidatePaymentMethod
 import com.lefpadlog.financeapp.ui.Screen
 import com.lefpadlog.financeapp.ui.composables.DropDownList
 import com.lefpadlog.financeapp.ui.composables.FormTextField
