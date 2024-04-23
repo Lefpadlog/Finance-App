@@ -21,12 +21,12 @@ fun LeftText(graph: Graph) {
     ) {
         Text(
             modifier = Modifier.align(Alignment.Start),
-            text = graph.maxAmount.toString()
+            text = graph.maxAmount.toString() + "€"
         )
 
         Text(
             modifier = Modifier.align(Alignment.Start),
-            text = graph.minAmount.toString()
+            text = graph.minAmount.toString() + "€"
         )
     }
 

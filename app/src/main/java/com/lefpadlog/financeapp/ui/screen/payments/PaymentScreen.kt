@@ -1,26 +1,18 @@
 package com.lefpadlog.financeapp.ui.screen.payments
 
-import androidx.compose.foundation.background
-import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
-import androidx.compose.foundation.layout.Spacer
-import androidx.compose.foundation.layout.fillMaxWidth
-import androidx.compose.foundation.layout.height
-import androidx.compose.material3.MaterialTheme
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.runtime.setValue
-import androidx.compose.ui.Modifier
-import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
 import com.lefpadlog.financeapp.code.data.AppDatabase.mainActivity
 import com.lefpadlog.financeapp.code.data.AppDatabase.paymentMethods
 import com.lefpadlog.financeapp.code.data.AppDatabase.payments
 import com.lefpadlog.financeapp.code.payment.updateRepeatedPayments
-import com.lefpadlog.financeapp.ui.composables.BottomBar
 import com.lefpadlog.financeapp.ui.PaymentScreen
+import com.lefpadlog.financeapp.ui.composables.BottomBar
 import com.lefpadlog.financeapp.ui.composables.LoadingField
 import com.lefpadlog.financeapp.ui.composables.NewItemButton
 import com.lefpadlog.financeapp.ui.composables.NoItemsFoundScreen

@@ -76,10 +76,5 @@ fun SearchField(navController: NavController) {
             )
         }
     }
-    Box(
-        modifier = Modifier
-            .height(1.dp)
-            .fillMaxWidth()
-            .background(MaterialTheme.colorScheme.onBackground)
-    )
+    SeparatorLine()
 }

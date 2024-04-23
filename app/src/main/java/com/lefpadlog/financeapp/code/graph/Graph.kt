@@ -38,8 +38,10 @@ class Graph(paymentMethod: PaymentMethod) {
         for (payment in paymentMethodPayments.reversed()) {
             val percentageDate = (convertDate(payment.date).toEpochDay() - oldestDate.toEpochDay() + 1).toFloat() / deltaTime.toFloat()
 
-            if (currentAmount > maxAmount) maxAmount = currentAmount
-            if (currentAmount < minAmount) minAmount = currentAmount
+            if (currentAmount > maxAmount)
+                maxAmount = "%.2f".format(currentAmount).replace(",", ".").toFloat()
+            if (currentAmount < minAmount)
+                minAmount = "%.2f".format(currentAmount).replace(",", ".").toFloat()
 
             if (payment.to == paymentMethod.title) currentAmount += payment.amount
             if (payment.from == paymentMethod.title) currentAmount -= payment.amount

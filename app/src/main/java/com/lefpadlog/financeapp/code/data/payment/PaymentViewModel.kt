@@ -26,12 +26,11 @@ class PaymentViewModel(application: Application) : AndroidViewModel(application)
     }
 
     fun getAllFiltered(sorted: Boolean = false): List<Payment> {
-        val payments = getAll(sorted)
-        return payments.filter {
-            it.title.contains(AppData.searchFilter.value) ||
-                    it.from.contains(AppData.searchFilter.value) ||
-                    it.to.contains(AppData.searchFilter.value) ||
-                    it.date.contains(AppData.searchFilter.value)
+        return getAll(sorted).filter {
+            it.title.lowercase().contains(AppData.searchFilter.value.lowercase()) ||
+                    it.from.lowercase().contains(AppData.searchFilter.value.lowercase()) ||
+                    it.to.lowercase().contains(AppData.searchFilter.value.lowercase()) ||
+                    it.date.lowercase().contains(AppData.searchFilter.value.lowercase())
         }
     }
 
@@ -73,14 +72,12 @@ class PaymentViewModel(application: Application) : AndroidViewModel(application)
 
         if (payment.type == "Pay in" || payment.type == "Transaction")
             if (toPaymentMethod != null) {
-                toPaymentMethod.amount =
-                    "%.2f".format(toPaymentMethod.amount + payment.amount).replace(",", ".").toFloat()
+                toPaymentMethod.amount = "%.2f".format(toPaymentMethod.amount + payment.amount).replace(",", ".").toFloat()
                 paymentMethods.update(toPaymentMethod)
             }
         if (payment.type == "Pay out" || payment.type == "Transaction")
             if (fromPaymentMethod != null) {
-                fromPaymentMethod.amount =
-                    "%.2f".format(fromPaymentMethod.amount - payment.amount).replace(",", ".").toFloat()
+                fromPaymentMethod.amount = "%.2f".format(fromPaymentMethod.amount - payment.amount).replace(",", ".").toFloat()
                 paymentMethods.update(fromPaymentMethod)
             }
     }

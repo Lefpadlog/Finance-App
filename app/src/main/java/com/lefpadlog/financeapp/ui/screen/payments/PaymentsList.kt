@@ -1,12 +1,12 @@
 package com.lefpadlog.financeapp.ui.screen.payments
 
-import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.lazy.LazyColumn
+import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
@@ -19,13 +19,13 @@ import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
 import com.lefpadlog.financeapp.code.data.AppData.selectedPayment
 import com.lefpadlog.financeapp.code.data.AppDatabase.payments
+import com.lefpadlog.financeapp.code.data.payment.Payment
 import com.lefpadlog.financeapp.code.date.convertDate
+import com.lefpadlog.financeapp.ui.PaymentScreen.SinglePaymentScreen
 import com.lefpadlog.financeapp.ui.theme.blueColor
 import com.lefpadlog.financeapp.ui.theme.greenColor
 import com.lefpadlog.financeapp.ui.theme.redColor
-import com.lefpadlog.financeapp.code.data.payment.Payment
 import java.time.LocalDate
-import com.lefpadlog.financeapp.ui.PaymentScreen.SinglePaymentScreen
 
 @Composable
 fun PaymentsList(navController: NavController) {
