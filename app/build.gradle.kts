@@ -1,6 +1,7 @@
 plugins {
     alias(libs.plugins.androidApplication)
     alias(libs.plugins.jetbrainsKotlinAndroid)
+    id("kotlin-kapt")
 }
 
 android {
@@ -12,7 +13,7 @@ android {
         minSdk = 34
         targetSdk = 34
         versionCode = 2
-        versionName = "1.1 Final"
+        versionName = "1.2 Final"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         vectorDrawables {
@@ -67,6 +68,7 @@ dependencies {
     implementation (libs.androidx.lifecycle.viewmodel.ktx)
     implementation (libs.kotlin.stdlib.jdk7)
     api (libs.kotlinx.coroutines.core)
+    kapt("androidx.room:room-compiler:2.6.1")
     api (libs.kotlinx.coroutines.android)
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
