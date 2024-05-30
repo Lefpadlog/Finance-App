@@ -5,6 +5,7 @@ sealed class Screen(val route: String) {
     data object PaymentMethodsScreen : Screen("paymentMethods()Screen")
     data object RepeatedPaymentsScreen : Screen("repeatedPaymentsScreen")
     data object GraphScreen : Screen("graphScreen")
+    data object LastCheckedScreen : Screen("lastCheckedScreen")
     data object DeveloperScreen : Screen("developerScreen")
 }
 

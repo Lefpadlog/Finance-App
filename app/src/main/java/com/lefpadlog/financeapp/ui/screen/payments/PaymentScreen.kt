@@ -10,13 +10,17 @@ import androidx.navigation.NavController
 import com.lefpadlog.financeapp.code.data.AppDatabase.mainActivity
 import com.lefpadlog.financeapp.code.data.AppDatabase.paymentMethods
 import com.lefpadlog.financeapp.code.data.AppDatabase.payments
+import com.lefpadlog.financeapp.code.data.AppDatabase.settings
+import com.lefpadlog.financeapp.code.date.convertDate
 import com.lefpadlog.financeapp.code.payment.updateRepeatedPayments
 import com.lefpadlog.financeapp.ui.PaymentScreen
 import com.lefpadlog.financeapp.ui.composables.BottomBar
+import com.lefpadlog.financeapp.ui.composables.CheckPaymentBox
 import com.lefpadlog.financeapp.ui.composables.LoadingField
 import com.lefpadlog.financeapp.ui.composables.NewItemButton
 import com.lefpadlog.financeapp.ui.composables.NoItemsFoundScreen
 import com.lefpadlog.financeapp.ui.composables.SearchField
+import java.time.LocalDate
 
 @Composable
 fun PaymentScreen(navController: NavController) {
@@ -26,9 +30,12 @@ fun PaymentScreen(navController: NavController) {
     var loadedPaymentMethods by rememberSaveable { mutableStateOf(false) }
     paymentMethods.getAllPaymentMethods.observe(mainActivity) { loadedPaymentMethods = true }
 
+    var loadedSettings by rememberSaveable { mutableStateOf(false) }
+    settings.getDefaultSettings.observe(mainActivity) { loadedSettings = true }
+
     var afterLoaded by rememberSaveable { mutableStateOf(false) }
 
-    if (!loadedPayments || !loadedPaymentMethods) {
+    if (!loadedPayments || !loadedPaymentMethods || !loadedSettings) {
         LoadingField()
     } else {
         if (!afterLoaded)
@@ -41,6 +48,7 @@ fun PaymentScreen(navController: NavController) {
             SearchField(navController)
             PaymentsList(navController)
         }
+        CheckPaymentBox(navController)
         BottomBar(navController)
         NewItemButton(navController, PaymentScreen.NewPaymentScreen)
         afterLoaded = true

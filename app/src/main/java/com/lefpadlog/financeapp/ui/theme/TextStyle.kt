@@ -24,19 +24,19 @@ val h3 = TextStyle(
 
 val h4 = TextStyle(
     fontSize = 18.sp,
-    fontWeight = FontWeight.Bold,
+    fontWeight = FontWeight.Normal,
     letterSpacing = 0.05.sp
 )
 
 val h5 = TextStyle(
     fontSize = 16.sp,
-    fontWeight = FontWeight.Bold,
+    fontWeight = FontWeight.Normal,
     letterSpacing = 0.05.sp
 )
 
 val h6 = TextStyle(
     fontSize = 14.sp,
-    fontWeight = FontWeight.Bold,
+    fontWeight = FontWeight.Normal,
     letterSpacing = 0.05.sp
 )
 

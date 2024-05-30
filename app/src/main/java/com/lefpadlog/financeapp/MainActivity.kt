@@ -13,8 +13,10 @@ import com.lefpadlog.financeapp.code.data.AppData
 import com.lefpadlog.financeapp.code.data.AppDatabase.payments
 import com.lefpadlog.financeapp.code.data.AppDatabase.mainActivity
 import com.lefpadlog.financeapp.code.data.AppDatabase.paymentMethods
+import com.lefpadlog.financeapp.code.data.AppDatabase.settings
 import com.lefpadlog.financeapp.code.data.payment.PaymentViewModel
 import com.lefpadlog.financeapp.code.data.paymentmethod.PaymentMethodViewModel
+import com.lefpadlog.financeapp.code.data.settings.SettingsViewModel
 import com.lefpadlog.financeapp.ui.Navigation
 import com.lefpadlog.financeapp.ui.theme.FinanceAppTheme
 
@@ -30,6 +32,7 @@ class MainActivity : ComponentActivity() {
                     mainActivity = this
                     payments = PaymentViewModel(application)
                     paymentMethods = PaymentMethodViewModel(application)
+                    settings = SettingsViewModel(application)
                     AppData.searchFilter = rememberSaveable { mutableStateOf("") }
 
                     Navigation()

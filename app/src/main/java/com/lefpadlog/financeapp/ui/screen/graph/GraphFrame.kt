@@ -38,7 +38,8 @@ fun GraphFrame(graph: Graph) {
                     .fillMaxSize()
                     .padding(7.dp)
             ) {
-                drawAmountZeroLine(graph)
+                if (graph.minAmount <= 0)
+                    drawAmountZeroLine(graph)
                 drawGraph(graph)
             }
 

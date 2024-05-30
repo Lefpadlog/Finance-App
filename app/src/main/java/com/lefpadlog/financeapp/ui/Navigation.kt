@@ -4,6 +4,7 @@ import androidx.compose.runtime.Composable
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
+import com.lefpadlog.financeapp.ui.screen.checkscreen.LastCheckedScreen
 import com.lefpadlog.financeapp.ui.screen.developer.DeveloperScreen
 import com.lefpadlog.financeapp.ui.screen.payments.PaymentScreen
 import com.lefpadlog.financeapp.ui.screen.payments.newpayment.NewPaymentScreen
@@ -45,6 +46,9 @@ fun Navigation() {
 
         composable(route = Screen.GraphScreen.route)
         { GraphScreen(navController = navController) }
+
+        composable(route = Screen.LastCheckedScreen.route)
+        { LastCheckedScreen(navController = navController) }
 
         composable(route = Screen.DeveloperScreen.route)
         { DeveloperScreen(navController = navController) }

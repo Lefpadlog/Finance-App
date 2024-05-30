@@ -8,9 +8,9 @@ import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.filled.AttachMoney
 import androidx.compose.material.icons.filled.DateRange
 import androidx.compose.material.icons.filled.Description
+import androidx.compose.material.icons.filled.EuroSymbol
 import androidx.compose.material3.Button
 import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.MaterialTheme
@@ -177,7 +177,7 @@ fun AmountField(amount: MutableState<String>, valid: MutableState<Boolean>) {
     FormTextField(label = "Amount",
         value = amount,
         valid = valid.value,
-        leaningIcon = Icons.Default.AttachMoney,
+        leaningIcon = Icons.Default.EuroSymbol,
         keyboardType = KeyboardType.Decimal,
         onValueChange = {
             if (Regex("\\d*[.,]?\\d{0,2}").matches(it)) amount.value = it
