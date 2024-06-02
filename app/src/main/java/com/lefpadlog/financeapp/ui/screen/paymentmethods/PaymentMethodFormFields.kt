@@ -6,6 +6,7 @@ import androidx.compose.foundation.layout.RowScope
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Description
@@ -52,10 +53,10 @@ fun RowScope.TypeField(type: MutableState<String>, valid: MutableState<Boolean>)
 }
 
 @Composable
-fun RowScope.AmountField(amount: MutableState<String>, valid: MutableState<Boolean>) {
+fun AmountField(amount: MutableState<String>, valid: MutableState<Boolean>) {
     Box(
         modifier = Modifier
-            .weight(2f)
+            .width(165.dp)
             .background(MaterialTheme.colorScheme.surface)
             .padding(horizontal = 3.dp)
     ) {

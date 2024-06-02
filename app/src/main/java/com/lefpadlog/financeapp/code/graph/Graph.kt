@@ -1,8 +1,6 @@
 package com.lefpadlog.financeapp.code.graph
 
-import android.util.Log
 import com.lefpadlog.financeapp.code.data.AppDatabase.payments
-import com.lefpadlog.financeapp.code.data.payment.Payment
 import com.lefpadlog.financeapp.code.data.paymentmethod.PaymentMethod
 import com.lefpadlog.financeapp.code.date.convertDate
 import java.time.LocalDate
@@ -36,7 +34,8 @@ class Graph(paymentMethod: PaymentMethod) {
         var currentAmount = getPaymentMethodStartAmount(paymentMethod)
         entries[0f] = currentAmount
         for (payment in paymentMethodPayments.reversed()) {
-            val percentageDate = (convertDate(payment.date).toEpochDay() - oldestDate.toEpochDay() + 1).toFloat() / deltaTime.toFloat()
+            val percentageDate =
+                (convertDate(payment.date).toEpochDay() - oldestDate.toEpochDay() + 1).toFloat() / deltaTime.toFloat()
 
             if (currentAmount > maxAmount)
                 maxAmount = "%.2f".format(currentAmount).replace(",", ".").toFloat()
@@ -55,19 +54,5 @@ class Graph(paymentMethod: PaymentMethod) {
             entries[key] = (value - minAmount) / deltaAmount
 
         amountZeroPercentage = -(minAmount / deltaAmount)
-    }
-
-    private fun getEntries(allEntries: List<Payment>): List<Payment> {
-
-        if (allEntries.size < 300)
-            return allEntries
-
-        val filteredEntries = mutableListOf<Payment>()
-        for (i in 0 until 300) {
-            val position = (allEntries.size.toFloat() / 300f) * i
-            filteredEntries.add(allEntries[position.toInt()])
-        }
-
-        return filteredEntries
     }
 }

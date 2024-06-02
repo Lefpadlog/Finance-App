@@ -26,6 +26,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
+import com.lefpadlog.financeapp.code.data.AppDatabase
 import com.lefpadlog.financeapp.code.data.AppDatabase.settings
 import com.lefpadlog.financeapp.code.date.convertDate
 import com.lefpadlog.financeapp.ui.Screen
@@ -36,7 +37,8 @@ import java.time.LocalDate
 fun CheckPaymentBox(navController: NavController) {
     val shown = rememberSaveable {
         mutableStateOf(
-            convertDate(settings.getDefault().lastChecked) < LocalDate.now().minusWeeks(2)
+            convertDate(settings.getDefault().lastChecked) < LocalDate.now().minusDays(14)
+                    && AppDatabase.paymentMethods.getAll().isNotEmpty()
         )
     }
 
@@ -51,7 +53,11 @@ fun CheckPaymentBox(navController: NavController) {
                 modifier = Modifier
                     .clip(RoundedCornerShape(15.dp))
                     .clickable {
-                        settings.updateDefault(settings.getDefault().copy(lastChecked = convertDate(LocalDate.now())))
+                        settings.updateDefault(
+                            settings
+                                .getDefault()
+                                .copy(lastChecked = convertDate(LocalDate.now()))
+                        )
                         shown.value = false
                         navController.navigate(Screen.LastCheckedScreen.route)
                     }
@@ -75,7 +81,17 @@ fun CloseButton(shown: MutableState<Boolean>) {
     Icon(
         modifier = Modifier
             .clickable {
-                settings.updateDefault(settings.getDefault().copy(lastChecked = convertDate(LocalDate.now())))
+                settings.updateDefault(
+                    settings
+                        .getDefault()
+                        .copy(
+                            lastChecked = convertDate(
+                                LocalDate
+                                    .now()
+                                    .minusDays(11)
+                            )
+                        )
+                )
                 shown.value = false
             }
             .padding(10.dp),

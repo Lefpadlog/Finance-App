@@ -4,7 +4,6 @@ import android.app.Application
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.viewModelScope
-import com.lefpadlog.financeapp.code.data.AppDatabase
 import com.lefpadlog.financeapp.code.data.AppDatabase.mainActivity
 import com.lefpadlog.financeapp.code.date.convertDate
 import kotlinx.coroutines.Dispatchers
@@ -23,7 +22,7 @@ class SettingsViewModel(application: Application) : AndroidViewModel(application
     }
 
     fun getDefault(): Settings {
-        var settings = Settings(1, convertDate(LocalDate.now().minusWeeks(3)))
+        var settings = Settings(1, convertDate(LocalDate.now().minusDays(15)))
         getDefaultSettings.observe(mainActivity) {
             if (it != null)
                 settings = it
